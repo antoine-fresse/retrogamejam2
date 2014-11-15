@@ -99,6 +99,7 @@ MonoBehaviour:
   m_speed: .100000001
   m_damage: 1
   m_direction: {x: 0, y: 0, z: 0}
+  m_LifeTime: 1000
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -13,7 +13,9 @@ public class LifeManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (IsDead()) {
+            Destroy(gameObject);
+        }
 	}
 
     public void DoDamage(float damage) {

@@ -9,14 +9,19 @@ public class Laser : MonoBehaviour {
 
     private GameObject m_spawner;
 
+    public int m_LifeTime = 100;
+
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         transform.position = transform.position + m_direction * m_speed;
+        m_LifeTime--;
+        if (m_LifeTime <= 0) {
+            Destroy(gameObject);
+        }
 	}
 
     void OnTriggerEnter2D(Collider2D hit) {
@@ -25,7 +30,6 @@ public class Laser : MonoBehaviour {
             if (manager != null) {
                 manager.DoDamage(m_damage);
             }
-            print("hit");
             Destroy(gameObject);
         }
     }
