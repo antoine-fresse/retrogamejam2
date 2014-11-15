@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: 6158c01c49b62964196b7e9f638c30b0
+guid: 6c47298d2ce522e42ab3eeafd4aaec7c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: laser_blue_0
-    21300002: laser_blue_1
-    21300004: laser_blue_2
+    21300000: walk 1_0
+    21300002: walk 1_1
+    21300004: walk 1_2
+    21300006: walk 1_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -27,7 +28,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: 2
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -40,39 +41,49 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: laser_blue_0
+    - name: walk 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 9
-        height: 54
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: laser_blue_1
+    - name: walk 1_1
       rect:
         serializedVersion: 2
-        x: 9
+        x: 16
         y: 0
-        width: 9
-        height: 54
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: laser_blue_2
+    - name: walk 1_2
       rect:
         serializedVersion: 2
-        x: 18
+        x: 32
         y: 0
-        width: 9
-        height: 54
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk 1_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
