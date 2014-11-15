@@ -23,7 +23,9 @@ public class LifeManager : MonoBehaviour {
         float oldLife = m_currentLife;
         m_currentLife = Mathf.Max(0.0f, m_currentLife - damage);
         if ((oldLife > 0.0f) && (m_currentLife == 0.0f)) {
-            m_DeathCallback();
+            if (m_DeathCallback != null) {
+                m_DeathCallback();
+            }
         }
     }
 

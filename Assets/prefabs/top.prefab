@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 61: {fileID: 6100000}
+  - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: top
   m_TagString: Untagged
@@ -40,6 +42,31 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .639999986, y: .639999986}
   m_Center: {x: 0, y: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb85ff7d04f40942a8406c4afe057b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxLife: 50
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfde21f7d0d43444fab97c3a91e87573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DeathExplosion: {fileID: 100000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}
+  m_ToSpawn: {fileID: 100002, guid: 5d783bb26145c3a4e97766883bd68085, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -42,6 +42,8 @@ public class Agent : MonoBehaviour {
         m_lifeManager.setDeathCallback(delegate() {
             Instantiate(m_DeathExplosion, transform.position, transform.rotation);
             Destroy(GetComponent<SpriteRenderer>());
+            Destroy(GetComponent<CircleCollider2D>());
+            Destroy(GetComponent<BoxCollider2D>());
         });
     }
 
