@@ -45,5 +45,6 @@ public class Player : MonoBehaviour {
     void shoot() {
         Laser laser = (Laser)Instantiate(m_LaserPrefab, transform.position, new Quaternion());
         laser.m_direction = m_AimDirection;
+        laser.SetSpawner(this.gameObject);
     }
 }
