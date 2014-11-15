@@ -13,16 +13,13 @@ public class LifeManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (IsDead()) {
-            Destroy(gameObject);
-        }
 	}
 
     public void DoDamage(float damage) {
         m_currentLife = Mathf.Max(0.0f, m_currentLife - damage);
     }
 
-    bool IsDead() {
+    public bool IsDead() {
         return m_currentLife <= 0.0f;
     }
 }
