@@ -84,7 +84,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
 --- !u!95 &9500000
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
-  m_playerSpeed: .100000001
+  m_playerSpeed: 150
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 50
   m_CanShotAndWalk: 1
