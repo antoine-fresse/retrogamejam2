@@ -13,8 +13,12 @@ public class Player : MonoBehaviour {
 
     private bool m_IsShoting;
 
+    public float m_ShotPerSecond = 100.0f;
+    private float m_lastShot;
+
 	// Use this for initialization
 	void Start () {
+        m_lastShot = 0.0f;
         m_IsShoting = false;
 	    m_direction = new Vector3(1.0f, 0.0f, 0.0f);
         m_AimDirection = new Vector3(1.0f, 0.0f, 0.0f);
@@ -28,6 +32,8 @@ public class Player : MonoBehaviour {
 	}
 
     void FixedUpdate() {
+        m_lastShot = m_lastShot + Time.deltaTime;
+
         Vector2 direction2D = new Vector2(Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"));
         if ((direction2D.x != 0) || (direction2D.y != 0)) {
             direction2D.Normalize();
@@ -53,13 +59,16 @@ public class Player : MonoBehaviour {
         transform.localEulerAngles = new Vector3(0.0f, 0.0f, angle);
         if (Input.GetAxis("Fire1") == 1.0f) {
             m_animator.SetBool("firingLaser", true);
-            shot();
+            if (canShot()) {
+                shot();
+            }
         } else {
             m_animator.SetBool("firingLaser", false);
         }
     }
 
     void shot() {
+        m_lastShot = 0.0f;
         Vector3 position = transform.position;
         if (m_LaserSpawner) {
             position = m_LaserSpawner.transform.position;
@@ -67,5 +76,9 @@ public class Player : MonoBehaviour {
         Laser laser = (Laser)Instantiate(m_LaserPrefab, position, new Quaternion());
         laser.m_direction = m_AimDirection;
         laser.SetSpawner(this.gameObject);
+    }
+
+    bool canShot() {
+        return m_lastShot > (1.0f / m_ShotPerSecond);
     }
 }
