@@ -46,8 +46,8 @@ public class Player : MonoBehaviour {
             dir2.Normalize();
             m_AimDirection = new Vector3(dir2.x, dir2.y, 0.0f);
         }
-        float angle = Vector3.Angle(m_AimDirection, new Vector3(1.0f, 0.0f, 0.0f));
-        if (m_AimDirection.y < 0.0f) {
+        float angle = Vector3.Angle(m_AimDirection, new Vector3(0.0f, 1.0f, 0.0f));
+        if (m_AimDirection.x > 0.0f) {
             angle = 360.0f - angle;
         }
         transform.localEulerAngles = new Vector3(0.0f, 0.0f, angle);
