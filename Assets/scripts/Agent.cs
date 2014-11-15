@@ -49,12 +49,12 @@ public class Agent : MonoBehaviour {
                 m_direction = new Vector3(direction2D.x, direction2D.y, 0);
                 transform.position = transform.position + m_direction * m_playerSpeed;
 
-                //m_animator.SetBool("walking", true);
+                m_animator.SetBool("walking", true);
             } else {
-                //m_animator.SetBool("walking", false);
+                m_animator.SetBool("walking", false);
             }
         } else {
-            //m_animator.SetBool("walking", false);
+            m_animator.SetBool("walking", false);
         }
 
         float ax = directionToPlayer.x;
@@ -70,14 +70,14 @@ public class Agent : MonoBehaviour {
         }
         transform.localEulerAngles = new Vector3(0.0f, 0.0f, angle);
         if (dist <= m_DistanceToShoot) {
-            //m_animator.SetBool("firingLaser", true);
+            m_animator.SetBool("firingLaser", true);
             m_IsShooting = true;
             if (canShoot()) {
                 shot();
             }
         } else {
             m_IsShooting = false;
-            //m_animator.SetBool("firingLaser", false);
+            m_animator.SetBool("firingLaser", false);
         }
     }
 
