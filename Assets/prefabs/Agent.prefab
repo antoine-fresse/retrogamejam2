@@ -25,10 +25,11 @@ GameObject:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
   - 95: {fileID: 9500000}
-  - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 50: {fileID: 5000000}
+  - 61: {fileID: 6100002}
+  - 58: {fileID: 5800000}
   m_Layer: 10
   m_Name: Agent
   m_TagString: Untagged
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: .125382885, w: -.992108464}
-  m_LocalPosition: {x: .0273749996, y: -3.62669992, z: 0}
+  m_LocalPosition: {x: -.557439983, y: -3.62669992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -76,8 +77,8 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6100000
-BoxCollider2D:
+--- !u!58 &5800000
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -85,7 +86,18 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .5}
+  m_Radius: .173869178
+  m_Center: {x: 0, y: 0}
+--- !u!61 &6100002
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .150000006, y: .150000006}
   m_Center: {x: 0, y: 0}
 --- !u!95 &9500000
 Animator:
@@ -119,6 +131,7 @@ MonoBehaviour:
   m_ShotPerSecond: 1.39999998
   m_CanShotAndWalk: 0
   m_DistanceToShoot: 5
+  m_DeathExplosion: {fileID: 100000, guid: 6470d267d96703143a9c860f2d81e1d4, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb85ff7d04f40942a8406c4afe057b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxLife: 100
+  m_maxLife: 10
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
