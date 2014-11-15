@@ -85,8 +85,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LaserPrefab: {fileID: 11400000, guid: bc009978a3985b547a732efb5cea9c44, type: 2}
-  m_playerSpeed: .00999999978
+  m_playerSpeed: .100000001
   m_direction: {x: 1, y: 0, z: 0}
+  m_ShotPerSecond: 50
+  m_CanShotAndWalk: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

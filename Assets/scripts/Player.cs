@@ -11,15 +11,15 @@ public class Player : MonoBehaviour {
     private Animator m_animator;
     private GameObject m_LaserSpawner;
 
-    private bool m_IsShoting;
-
     public float m_ShotPerSecond = 100.0f;
-    private float m_lastShot;
+    private float m_lastShoot;
+
+    public bool m_CanShotAndWalk = false;
+    private bool m_IsShooting = false;
 
 	// Use this for initialization
 	void Start () {
-        m_lastShot = 0.0f;
-        m_IsShoting = false;
+        m_lastShoot = 0.0f;
 	    m_direction = new Vector3(1.0f, 0.0f, 0.0f);
         m_AimDirection = new Vector3(1.0f, 0.0f, 0.0f);
         m_animator = GetComponent<Animator>();
@@ -32,10 +32,10 @@ public class Player : MonoBehaviour {
 	}
 
     void FixedUpdate() {
-        m_lastShot = m_lastShot + Time.deltaTime;
+        m_lastShoot = m_lastShoot + Time.deltaTime;
 
         Vector2 direction2D = new Vector2(Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"));
-        if ((direction2D.x != 0) || (direction2D.y != 0)) {
+        if (((direction2D.x != 0) || (direction2D.y != 0)) && (m_CanShotAndWalk || (!m_IsShooting))) {
             direction2D.Normalize();
             m_direction = new Vector3(direction2D.x, direction2D.y, 0);
             transform.position = transform.position + m_direction * m_playerSpeed;
@@ -59,26 +59,28 @@ public class Player : MonoBehaviour {
         transform.localEulerAngles = new Vector3(0.0f, 0.0f, angle);
         if (Input.GetAxis("Fire1") == 1.0f) {
             m_animator.SetBool("firingLaser", true);
-            if (canShot()) {
+            m_IsShooting = true;
+            if (canShoot()) {
                 shot();
             }
         } else {
+            m_IsShooting = false;
             m_animator.SetBool("firingLaser", false);
         }
     }
 
     void shot() {
-        m_lastShot = 0.0f;
+        m_lastShoot = 0.0f;
         Vector3 position = transform.position;
         if (m_LaserSpawner) {
             position = m_LaserSpawner.transform.position;
         }
-        Laser laser = (Laser)Instantiate(m_LaserPrefab, position, new Quaternion());
+        Laser laser = (Laser)Instantiate(m_LaserPrefab, position, gameObject.transform.rotation);
         laser.m_direction = m_AimDirection;
         laser.SetSpawner(this.gameObject);
     }
 
-    bool canShot() {
-        return m_lastShot > (1.0f / m_ShotPerSecond);
+    bool canShoot() {
+        return m_lastShoot > (1.0f / m_ShotPerSecond);
     }
 }
