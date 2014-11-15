@@ -11,8 +11,11 @@ public class Player : MonoBehaviour {
     private Animator m_animator;
     private GameObject m_LaserSpawner;
 
+    private bool m_IsShoting;
+
 	// Use this for initialization
 	void Start () {
+        m_IsShoting = false;
 	    m_direction = new Vector3(1.0f, 0.0f, 0.0f);
         m_AimDirection = new Vector3(1.0f, 0.0f, 0.0f);
         m_animator = GetComponent<Animator>();
@@ -49,11 +52,14 @@ public class Player : MonoBehaviour {
         }
         transform.localEulerAngles = new Vector3(0.0f, 0.0f, angle);
         if (Input.GetAxis("Fire1") == 1.0f) {
-            shoot();
+            m_animator.SetBool("firingLaser", true);
+            shot();
+        } else {
+            m_animator.SetBool("firingLaser", false);
         }
     }
 
-    void shoot() {
+    void shot() {
         Vector3 position = transform.position;
         if (m_LaserSpawner) {
             position = m_LaserSpawner.transform.position;
