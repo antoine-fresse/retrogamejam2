@@ -24,6 +24,7 @@ public class Agent : MonoBehaviour {
     private Rigidbody2D m_body;
 
     private LifeManager m_lifeManager;
+    public GameObject m_DeathExplosion;
 
     // Use this for initialization
     void Start() {
@@ -37,6 +38,11 @@ public class Agent : MonoBehaviour {
 
         m_Player = GameObject.FindGameObjectsWithTag("Player")[0];
         m_lifeManager = GetComponent<LifeManager>();
+
+        m_lifeManager.setDeathCallback(delegate() {
+            Instantiate(m_DeathExplosion, transform.position, transform.rotation);
+            Destroy(GetComponent<SpriteRenderer>());
+        });
     }
 
     // Update is called once per frame

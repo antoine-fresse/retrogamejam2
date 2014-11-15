@@ -21,6 +21,8 @@ public class Player : MonoBehaviour {
 
     private LifeManager m_lifeManager;
 
+    public GameObject m_DeathExplosion;
+
 	// Use this for initialization
 	void Start () {
         m_lastShoot = 0.0f;
@@ -31,6 +33,11 @@ public class Player : MonoBehaviour {
 
         m_LaserSpawner = transform.Find("LaserSpawner").gameObject;
         m_lifeManager = GetComponent<LifeManager>();
+
+        m_lifeManager.setDeathCallback(delegate(){
+            Instantiate(m_DeathExplosion, transform.position, transform.rotation);
+            Destroy(GetComponent<SpriteRenderer>());
+        });
 	}
 	
 	// Update is called once per frame

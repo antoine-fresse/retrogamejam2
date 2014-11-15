@@ -146,6 +146,7 @@ MonoBehaviour:
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 50
   m_CanShotAndWalk: 1
+  m_DeathExplosion: {fileID: 100000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb85ff7d04f40942a8406c4afe057b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxLife: 100
+  m_maxLife: 20
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
