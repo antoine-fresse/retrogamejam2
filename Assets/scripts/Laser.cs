@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Laser : MonoBehaviour {
 
-    public float m_speed = 0.1f;
+    public float m_speed = 0.25f;
     public float m_damage = 1.0f;
     public Vector3 m_direction;
 

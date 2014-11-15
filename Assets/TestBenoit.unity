@@ -215,6 +215,7 @@ GameObject:
   - 114: {fileID: 151742971}
   - 114: {fileID: 151742974}
   - 61: {fileID: 151742975}
+  - 50: {fileID: 151742976}
   m_Layer: 0
   m_Name: Galvatron
   m_TagString: Player
@@ -248,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
-  m_playerSpeed: .100000001
+  m_playerSpeed: 150
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 50
   m_CanShotAndWalk: 1
@@ -316,6 +317,22 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
+--- !u!50 &151742976
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 4ea47c968e3197747baefe3ac1f44b79,
+    type: 2}
+  m_PrefabInternal: {fileID: 1013513817}
+  m_GameObject: {fileID: 151742969}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &266559427
 Prefab:
   m_ObjectHideFlags: 0
@@ -498,6 +515,7 @@ GameObject:
   - 61: {fileID: 811963721}
   - 114: {fileID: 811963720}
   - 114: {fileID: 811963725}
+  - 50: {fileID: 811963726}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -518,7 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
-  m_playerSpeed: .0500000007
+  m_playerSpeed: 5
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998
   m_CanShotAndWalk: 0
@@ -600,6 +618,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 100
+--- !u!50 &811963726
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 5d783bb26145c3a4e97766883bd68085,
+    type: 2}
+  m_PrefabInternal: {fileID: 107737178}
+  m_GameObject: {fileID: 811963719}
+  m_Mass: .100000001
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &831063741
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +647,7 @@ GameObject:
   - 61: {fileID: 831063743}
   - 114: {fileID: 831063742}
   - 114: {fileID: 831063747}
+  - 50: {fileID: 831063748}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -633,7 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
-  m_playerSpeed: .0500000007
+  m_playerSpeed: 5
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998
   m_CanShotAndWalk: 0
@@ -715,6 +750,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 100
+--- !u!50 &831063748
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 5d783bb26145c3a4e97766883bd68085,
+    type: 2}
+  m_PrefabInternal: {fileID: 266559427}
+  m_GameObject: {fileID: 831063741}
+  m_Mass: .100000001
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &846846803
 Prefab:
   m_ObjectHideFlags: 0
@@ -803,6 +854,14 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a,
         type: 2}
+    - target: {fileID: 11400000, guid: 4ea47c968e3197747baefe3ac1f44b79, type: 2}
+      propertyPath: m_playerSpeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: 4ea47c968e3197747baefe3ac1f44b79, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ea47c968e3197747baefe3ac1f44b79, type: 2}
   m_RootGameObject: {fileID: 151742969}
@@ -998,6 +1057,7 @@ GameObject:
   - 61: {fileID: 1457236557}
   - 114: {fileID: 1457236556}
   - 114: {fileID: 1457236560}
+  - 50: {fileID: 1457236561}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -1031,7 +1091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
-  m_playerSpeed: .0500000007
+  m_playerSpeed: 5
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998
   m_CanShotAndWalk: 0
@@ -1100,6 +1160,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 100
+--- !u!50 &1457236561
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 5d783bb26145c3a4e97766883bd68085,
+    type: 2}
+  m_PrefabInternal: {fileID: 846846803}
+  m_GameObject: {fileID: 1457236554}
+  m_Mass: .100000001
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &1667412136
 Prefab:
   m_ObjectHideFlags: 0
@@ -1275,6 +1351,7 @@ GameObject:
   - 61: {fileID: 1767194905}
   - 114: {fileID: 1767194904}
   - 114: {fileID: 1767194909}
+  - 50: {fileID: 1767194910}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -1295,7 +1372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
-  m_playerSpeed: .0500000007
+  m_playerSpeed: 5
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998
   m_CanShotAndWalk: 0
@@ -1377,6 +1454,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 100
+--- !u!50 &1767194910
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 5d783bb26145c3a4e97766883bd68085,
+    type: 2}
+  m_PrefabInternal: {fileID: 502228983}
+  m_GameObject: {fileID: 1767194903}
+  m_Mass: .100000001
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &1850001626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,6 +1483,7 @@ GameObject:
   - 61: {fileID: 1850001629}
   - 114: {fileID: 1850001628}
   - 114: {fileID: 1850001632}
+  - 50: {fileID: 1850001633}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -1423,7 +1517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
-  m_playerSpeed: .0500000007
+  m_playerSpeed: 5
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998
   m_CanShotAndWalk: 0
@@ -1492,6 +1586,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 100
+--- !u!50 &1850001633
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: 5d783bb26145c3a4e97766883bd68085,
+    type: 2}
+  m_PrefabInternal: {fileID: 1667412136}
+  m_GameObject: {fileID: 1850001626}
+  m_Mass: .100000001
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &2077003047
 GameObject:
   m_ObjectHideFlags: 0

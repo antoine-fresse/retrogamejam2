@@ -17,12 +17,15 @@ public class Player : MonoBehaviour {
     public bool m_CanShotAndWalk = false;
     private bool m_IsShooting = false;
 
+    private Rigidbody2D m_body;
+
 	// Use this for initialization
 	void Start () {
         m_lastShoot = 0.0f;
 	    m_direction = new Vector3(1.0f, 0.0f, 0.0f);
         m_AimDirection = new Vector3(1.0f, 0.0f, 0.0f);
         m_animator = GetComponent<Animator>();
+        m_body = GetComponent<Rigidbody2D>();
 
         m_LaserSpawner = transform.Find("LaserSpawner").gameObject;
 	}
@@ -38,10 +41,12 @@ public class Player : MonoBehaviour {
         if (((direction2D.x != 0) || (direction2D.y != 0)) && (m_CanShotAndWalk || (!m_IsShooting))) {
             direction2D.Normalize();
             m_direction = new Vector3(direction2D.x, direction2D.y, 0);
-            transform.position = transform.position + m_direction * m_playerSpeed;
+            m_body.velocity = Vector2.zero;
+            m_body.AddForce(new Vector2(direction2D.x * m_playerSpeed, direction2D.y * m_playerSpeed));
 
             m_animator.SetBool("walking", true);
         } else {
+            m_body.velocity = Vector2.zero;
             m_animator.SetBool("walking", false);
         }
 
@@ -67,6 +72,8 @@ public class Player : MonoBehaviour {
             m_IsShooting = false;
             m_animator.SetBool("firingLaser", false);
         }
+
+        
     }
 
     void shot() {
