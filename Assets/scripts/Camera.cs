@@ -20,6 +20,6 @@ public class Camera : MonoBehaviour {
 		float t = Time.time;
 		shake = Mathf.Max(shake - shake*0.5f, 0.0f);
 
-		transform.position = position + new Vector3(Mathf.Cos(20 * t) * shake * 0.2f, Mathf.Cos(50 * t + 3) * shake * 0.2f, 0.0f);
+		transform.position = position + new Vector3(Mathf.Cos(20 * t) * shake * 0.1f, Mathf.Cos(50 * t + 3) * shake * 0.1f, 0.0f);
 	}
 }

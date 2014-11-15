@@ -30,7 +30,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100002}
   - 58: {fileID: 5800000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Agent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
