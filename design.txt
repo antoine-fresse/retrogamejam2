@@ -1,0 +1,25 @@
+Vue de dessus
+
+Incarne Galvatron
+
+scoring
+
+environnement completement destructible
+
+plus on detruit, plus il y a d'ennemis
+
+La partie s'arrete quand on meurt
+
+
+Galvatron capacités :
+
+missiles
+transformation tank
+appel à l'aide de decepticons
+
+Ennemis :
+principaux : CIA/KSI
+occasionels :
+ - autobots
+ - dinobots
+
