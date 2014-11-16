@@ -13,9 +13,7 @@ public class ExplosionCluster : MonoBehaviour {
 
 	public Transform prefab;
 
-
-
-
+    private GameObject m_spawner;
 
 
 	// Use this for initialization
@@ -29,6 +27,10 @@ public class ExplosionCluster : MonoBehaviour {
 		for (int i = 0; i < count; i++ ) {
 			Vector3 pos = (new Vector3(Random.value-0.5f, Random.value-0.5f, 0.0f)) * radius;
 			Transform t = Instantiate(prefab, transform.position+pos, Quaternion.identity) as Transform;
+            Explosion exp = t.gameObject.GetComponent<Explosion>();
+            if (exp != null) {
+                exp.SetSpawner(m_spawner);
+            }
 			float scale = Random.Range(minScale, maxScale);
 			t.localScale = new Vector3(scale, scale, scale);
 
@@ -37,7 +39,7 @@ public class ExplosionCluster : MonoBehaviour {
 			foreach (Collider2D collider in colliders) {
 				LifeManager manager = collider.gameObject.GetComponent<LifeManager>();
 				if (manager != null) {
-					manager.DoDamage(damage/count, gameObject);
+					manager.DoDamage(damage/count, gameObject, m_spawner);
 				}
 			}
 
@@ -48,4 +50,12 @@ public class ExplosionCluster : MonoBehaviour {
 		Destroy(gameObject);
 
 	}
+
+    public void SetSpawner(GameObject spawner) {
+        m_spawner = spawner;
+    }
+
+    public GameObject GetSpawner() {
+        return m_spawner;
+    }
 }

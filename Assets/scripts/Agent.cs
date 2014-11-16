@@ -26,6 +26,8 @@ public class Agent : MonoBehaviour {
     private LifeManager m_lifeManager;
     public GameObject m_DeathExplosion;
 
+    private ScoreManager m_scoreManager;
+
     // Use this for initialization
     void Start() {
         m_lastShoot = 0.0f;
@@ -33,6 +35,7 @@ public class Agent : MonoBehaviour {
         m_AimDirection = new Vector3(1.0f, 0.0f, 0.0f);
         m_animator = GetComponent<Animator>();
         m_body = GetComponent<Rigidbody2D>();
+        m_scoreManager = GetComponent<ScoreManager>();
 
         m_LaserSpawner = transform.Find("LaserSpawner").gameObject;
 
@@ -52,6 +55,20 @@ public class Agent : MonoBehaviour {
             Destroy(GetComponent<CircleCollider2D>());
             Destroy(GetComponent<BoxCollider2D>());
 			transform.localEulerAngles = new Vector3(0.0f, 0.0f, Random.value * 360.0f);
+
+            if (m_scoreManager != null) {
+                GameObject killer = m_lifeManager.killer;
+                if (killer != null) {
+                    ScoreManager sm = killer.GetComponent<ScoreManager>();
+                    if (m_lifeManager.exploded) {
+                        sm.addScore(m_scoreManager.m_ExplosionReward);
+                    } else if (m_lifeManager.desintegrated) {
+                        sm.addScore(m_scoreManager.m_DesintegrationReward);
+                    } else {
+                        sm.addScore(m_scoreManager.m_DefaultReward);
+                    }
+                }
+            }
         };
     }
 

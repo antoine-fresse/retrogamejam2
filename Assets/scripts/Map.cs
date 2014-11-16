@@ -69,7 +69,8 @@ public class Map : MonoBehaviour {
 		for (int i = 0; i < nbRows; i++) {
 			for (int j = 0; j < nbCols; j++) {
 				if (!mainStreets.Contains(i) && !sideStreets.Contains(j) && !mainStreets.Contains(i - 1) && !mainStreets.Contains(i + 1) && !emptyBlock.isInBlock(i,j)) {
-					var t = (Transform)Instantiate(building, transform.position + new Vector3(i, j, 0), Quaternion.identity);
+                    int rot = Mathf.RoundToInt(Random.value * 3.0f);
+					var t = (Transform)Instantiate(building, transform.position + new Vector3(i, j, 0), Quaternion.AngleAxis(rot * 90.0f, new Vector3(0.0f, 0.0f, 1.0f)));
 					t.parent = transform;
 				}
 			}

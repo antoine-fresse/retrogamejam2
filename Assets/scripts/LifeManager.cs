@@ -12,6 +12,7 @@ public class LifeManager : MonoBehaviour {
 
     public bool exploded = false;
     public bool desintegrated = false;
+    public GameObject killer;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,7 @@ public class LifeManager : MonoBehaviour {
 	void Update () {
 	}
 
-    public void DoDamage(float damage, GameObject hitter) {
+    public void DoDamage(float damage, GameObject hitter, GameObject spawner) {
         float oldLife = m_currentLife;
         m_currentLife = Mathf.Max(0.0f, m_currentLife - damage);
         if ((oldLife > 0.0f) && (m_currentLife == 0.0f)) {
@@ -32,6 +33,7 @@ public class LifeManager : MonoBehaviour {
                 || (hitter.GetComponent<ExplosionCluster>() != null)) {
                 exploded = true;
             }
+            killer = spawner;
 			if (OnDeath != null) {
 				OnDeath();
             }
@@ -40,6 +42,21 @@ public class LifeManager : MonoBehaviour {
 
     public bool IsDead() {
         return m_currentLife <= 0.0f;
+    }
+
+    public void SetLife(float newLife) {
+        float oldLife = m_currentLife;
+        m_currentLife = Mathf.Max(0.0f, newLife);
+        if ((oldLife > 0.0f) && (m_currentLife == 0.0f)) {
+            killer = null;
+            if (OnDeath != null) {
+                OnDeath();
+            }
+        }
+    }
+
+    public float getLife() {
+        return m_currentLife;
     }
 
 }

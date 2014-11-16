@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Explosion : MonoBehaviour {
 
+    private GameObject m_spawner;
 
 	// Use this for initialization
 	void Start () {
@@ -14,5 +15,12 @@ public class Explosion : MonoBehaviour {
 		yield return new WaitForSeconds(1.0f);
 		Destroy(gameObject);
 	}
-	
+
+    public void SetSpawner(GameObject spawner) {
+        m_spawner = spawner;
+    }
+
+    public GameObject GetSpawner() {
+        return m_spawner;
+    }
 }

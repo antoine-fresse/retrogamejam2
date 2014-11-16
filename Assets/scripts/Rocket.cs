@@ -31,7 +31,7 @@ public class Rocket : MonoBehaviour {
         if ((hit.gameObject != m_spawner) && (!hit.gameObject.name.Equals("Rocket(Clone)"))) {
             LifeManager manager = hit.gameObject.GetComponent<LifeManager>();
             if (manager != null) {
-                manager.DoDamage(m_damage, gameObject);
+                manager.DoDamage(m_damage, gameObject, m_spawner);
             }
             fuse = 0;
             Explode();
@@ -51,6 +51,7 @@ public class Rocket : MonoBehaviour {
 		exp.interval = 0.05f;
 		exp.radius = 0.7f;
 		exp.damage = m_damage;
+        exp.SetSpawner(m_spawner);
 
 		Destroy(gameObject);
 	}
@@ -58,5 +59,9 @@ public class Rocket : MonoBehaviour {
 
     public void SetSpawner(GameObject spawner) {
         m_spawner = spawner;
+    }
+
+    public GameObject GetSpawner() {
+        return m_spawner;
     }
 }
