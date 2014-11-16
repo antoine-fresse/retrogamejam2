@@ -8,9 +8,11 @@ public class Building : MonoBehaviour {
     public GameObject m_DeathExplosion;
     public GameObject m_ToSpawn;
 
+	private Animator m_anim;
 	// Use this for initialization
 	void Start () {
         m_LifeManager = GetComponent<LifeManager>();
+		m_anim = GetComponent<Animator>();
         //m_LifeManager.setDeathCallback(delegate() {
 		m_LifeManager.OnDeath += () => {
             if (m_DeathExplosion != null) {
@@ -19,13 +21,28 @@ public class Building : MonoBehaviour {
             if (m_ToSpawn != null) {
 				Instantiate(m_ToSpawn, transform.position + new Vector3(Random.value - 0.5f, Random.value - 0.5f, Random.value - 0.5f), transform.rotation);
             }
-            Destroy(GetComponent<SpriteRenderer>());
+            //Destroy(GetComponent<SpriteRenderer>());
+
+			foreach (Transform t in transform) {
+				float scale = Random.value*0.5f + 0.5f;
+				t.localScale = new Vector3(scale, scale, scale);
+				t.localEulerAngles = new Vector3(0.0f, 0.0f, Random.value * 360.0f);
+				t.localPosition = new Vector3((Random.value - .5f) * 0.5f, (Random.value - .5f) * 0.5f, 0.0f);
+				t.gameObject.SetActive(true);
+			}
+			gameObject.renderer.enabled = false;
+
             Destroy(GetComponent<BoxCollider2D>());
+			StartCoroutine(Remove());
         };
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void Update() {
+		m_anim.SetFloat("damage", 1.0f - (m_LifeManager.getLife()/ m_LifeManager.m_maxLife));
+	}
+
+	IEnumerator Remove() {
+		yield return new WaitForSeconds(20f);
+		Destroy(gameObject);
 	}
 }

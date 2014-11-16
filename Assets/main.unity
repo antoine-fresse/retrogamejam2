@@ -282,6 +282,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 20
+  exploded: 0
+  desintegrated: 0
+  killer: {fileID: 0}
 --- !u!50 &790591046
 Rigidbody2D:
   m_ObjectHideFlags: 0
