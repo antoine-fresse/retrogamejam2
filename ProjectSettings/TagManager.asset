@@ -4,6 +4,8 @@
 TagManager:
   tags:
   - Optimus
+  - AgentSpawner
+  - Agent
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
