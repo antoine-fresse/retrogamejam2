@@ -108,9 +108,17 @@ public class Player : MonoBehaviour {
             m_animator.SetBool("walking", false);
             m_animator.SetBool("firingLaser", false);
 
-            if (Input.GetAxis("Restart") != 0.0f) {
-                Application.LoadLevel(Application.loadedLevel);
-            }
+			int score = GetComponent<ScoreManager>().getScore();
+			PlayerPrefs.SetInt("score", score);
+
+			int best = PlayerPrefs.HasKey("bestscore") ? PlayerPrefs.GetInt("bestscore") : 0;
+
+			if (score > best)
+				PlayerPrefs.SetInt("bestscore", score);
+
+			PlayerPrefs.Save();
+
+			Application.LoadLevel(2);
         }
     }
 
