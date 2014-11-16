@@ -31,7 +31,7 @@ public class Rocket : MonoBehaviour {
         if ((hit.gameObject != m_spawner) && (!hit.gameObject.name.Equals("Rocket(Clone)"))) {
             LifeManager manager = hit.gameObject.GetComponent<LifeManager>();
             if (manager != null) {
-                manager.DoDamage(m_damage);
+                manager.DoDamage(m_damage, gameObject);
             }
             fuse = 0;
             Explode();

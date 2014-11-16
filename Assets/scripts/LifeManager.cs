@@ -10,6 +10,9 @@ public class LifeManager : MonoBehaviour {
 
 	public event DeathCallback OnDeath;
 
+    public bool exploded = false;
+    public bool desintegrated = false;
+
 	// Use this for initialization
 	void Start () {
         m_currentLife = m_maxLife;
@@ -19,10 +22,16 @@ public class LifeManager : MonoBehaviour {
 	void Update () {
 	}
 
-    public void DoDamage(float damage) {
+    public void DoDamage(float damage, GameObject hitter) {
         float oldLife = m_currentLife;
         m_currentLife = Mathf.Max(0.0f, m_currentLife - damage);
         if ((oldLife > 0.0f) && (m_currentLife == 0.0f)) {
+            if (hitter.GetComponent<Laser>() != null) {
+                desintegrated = true;
+            } else if ((hitter.GetComponent<Rocket>() != null) || (hitter.GetComponent<Explosion>() != null)
+                || (hitter.GetComponent<ExplosionCluster>() != null)) {
+                exploded = true;
+            }
 			if (OnDeath != null) {
 				OnDeath();
             }

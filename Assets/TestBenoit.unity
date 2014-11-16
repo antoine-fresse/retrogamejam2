@@ -313,6 +313,7 @@ MonoBehaviour:
   m_LaserPerSecond: 100
   m_RocketPerSecond: 10
   m_CanShotAndWalk: 0
+  m_lifeManager: {fileID: 0}
   m_DeathExplosion: {fileID: 100000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}
 --- !u!95 &151742972
 Animator:
@@ -366,6 +367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 20
+  exploded: 0
+  desintegrated: 0
 --- !u!61 &151742975
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -564,7 +567,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 562900248}
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
@@ -584,6 +587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 10
+  exploded: 0
+  desintegrated: 0
 --- !u!114 &562900253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,6 +876,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 10
+  exploded: 0
+  desintegrated: 0
 --- !u!50 &811963726
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -880,7 +887,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 811963719}
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
@@ -1017,6 +1024,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 10
+  exploded: 0
+  desintegrated: 0
 --- !u!50 &831063748
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1026,7 +1035,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 831063741}
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
@@ -1318,6 +1327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 10
+  exploded: 0
+  desintegrated: 0
 --- !u!50 &1457236561
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1327,7 +1338,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1457236554}
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
@@ -1562,6 +1573,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 10
+  exploded: 0
+  desintegrated: 0
 --- !u!50 &1767194910
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1571,7 +1584,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1767194903}
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
@@ -1708,6 +1721,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLife: 10
+  exploded: 0
+  desintegrated: 0
 --- !u!50 &1850001633
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1717,7 +1732,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1850001626}
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0

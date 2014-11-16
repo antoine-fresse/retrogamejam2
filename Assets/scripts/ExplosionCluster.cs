@@ -37,7 +37,7 @@ public class ExplosionCluster : MonoBehaviour {
 			foreach (Collider2D collider in colliders) {
 				LifeManager manager = collider.gameObject.GetComponent<LifeManager>();
 				if (manager != null) {
-					manager.DoDamage(damage/count);
+					manager.DoDamage(damage/count, gameObject);
 				}
 			}
 

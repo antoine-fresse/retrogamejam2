@@ -42,7 +42,14 @@ public class Agent : MonoBehaviour {
 		m_lifeManager.OnDeath += () => {
             Instantiate(m_DeathExplosion, transform.position, transform.rotation);
             //Destroy(GetComponent<SpriteRenderer>());
-			m_animator.SetBool("dead", true);
+            print("dead");
+            if (m_lifeManager.exploded) {
+                m_animator.SetBool("exploded", true);
+            } else if (m_lifeManager.desintegrated) {
+                m_animator.SetBool("desintegrated", true);
+            } else {
+                m_animator.SetBool("dead", true);
+            }
             Destroy(GetComponent<CircleCollider2D>());
             Destroy(GetComponent<BoxCollider2D>());
 			transform.localEulerAngles = new Vector3(0.0f, 0.0f, Random.value * 360.0f);
