@@ -35,7 +35,7 @@ public class RandomMBExplosion : MonoBehaviour {
     IEnumerator warning() {
         yield return new WaitForSeconds(m_nextShot);
 
-        int m_nextSide = Mathf.RoundToInt(Random.value * 3.0f);
+        m_nextSide = Mathf.RoundToInt(Random.value * 3.0f);
         if (m_nextSide == 0) { // droite
             Instantiate(m_rightTooltip, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
             StartCoroutine(shoot());
