@@ -14,6 +14,7 @@ public class Laser : MonoBehaviour {
 	public ExplosionCluster prefabExp;
 	// Use this for initialization
 	void Start () {
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Projectiles"), LayerMask.NameToLayer("Projectiles"), true);
 	}
 	
 	// Update is called once per frame
