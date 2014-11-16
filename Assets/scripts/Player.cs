@@ -46,6 +46,11 @@ public class Player : MonoBehaviour {
             Instantiate(m_DeathExplosion, transform.position, transform.rotation);
             Destroy(GetComponent<SpriteRenderer>());
         };
+
+        ScoreManager sm = GetComponent<ScoreManager>();
+        sm.OnScoreChange += () => {
+            print(sm.getScore().ToString());
+        };
 	}
 	
 	// Update is called once per frame

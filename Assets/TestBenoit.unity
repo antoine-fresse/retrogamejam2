@@ -273,6 +273,7 @@ GameObject:
   - 114: {fileID: 151742974}
   - 61: {fileID: 151742975}
   - 50: {fileID: 151742976}
+  - 114: {fileID: 151742977}
   m_Layer: 9
   m_Name: Galvatron
   m_TagString: Player
@@ -310,8 +311,8 @@ MonoBehaviour:
   m_RocketPrefab: {fileID: 11400000, guid: ee48009417b634545ab4608925efe898, type: 2}
   m_playerSpeed: 150
   m_direction: {x: 1, y: 0, z: 0}
-  m_LaserPerSecond: 100
-  m_RocketPerSecond: 10
+  m_LaserPerSecond: 20
+  m_RocketPerSecond: 1.20000005
   m_CanShotAndWalk: 0
   m_lifeManager: {fileID: 0}
   m_DeathExplosion: {fileID: 100000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}
@@ -369,6 +370,7 @@ MonoBehaviour:
   m_maxLife: 20
   exploded: 0
   desintegrated: 0
+  killer: {fileID: 0}
 --- !u!61 &151742975
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -397,6 +399,21 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!114 &151742977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 4ea47c968e3197747baefe3ac1f44b79,
+    type: 2}
+  m_PrefabInternal: {fileID: 1013513817}
+  m_GameObject: {fileID: 151742969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc846bdfe537ad94a967ec8e17917dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExplosionReward: 1
+  m_DesintegrationReward: 1
+  m_DefaultReward: 1
 --- !u!1001 &266559427
 Prefab:
   m_ObjectHideFlags: 0
@@ -463,7 +480,7 @@ Transform:
   m_PrefabInternal: {fileID: 1013513817}
   m_GameObject: {fileID: 293795611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.396869987, y: .379099995, z: 0}
+  m_LocalPosition: {x: -.396869987, y: .629719973, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 151742970}
@@ -527,6 +544,7 @@ GameObject:
   - 50: {fileID: 562900251}
   - 61: {fileID: 562900250}
   - 58: {fileID: 562900249}
+  - 114: {fileID: 562900257}
   m_Layer: 10
   m_Name: Agent
   m_TagString: Untagged
@@ -589,6 +607,7 @@ MonoBehaviour:
   m_maxLife: 10
   exploded: 0
   desintegrated: 0
+  killer: {fileID: 0}
 --- !u!114 &562900253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,6 +679,21 @@ Transform:
   - {fileID: 1497900680}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &562900257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 5d783bb26145c3a4e97766883bd68085,
+    type: 2}
+  m_PrefabInternal: {fileID: 714150600}
+  m_GameObject: {fileID: 562900248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc846bdfe537ad94a967ec8e17917dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExplosionReward: 1
+  m_DesintegrationReward: 1
+  m_DefaultReward: 1
 --- !u!1001 &714150600
 Prefab:
   m_ObjectHideFlags: 0
@@ -773,6 +807,7 @@ GameObject:
   - 50: {fileID: 811963726}
   - 61: {fileID: 811963727}
   - 58: {fileID: 811963721}
+  - 114: {fileID: 811963728}
   m_Layer: 10
   m_Name: Agent
   m_TagString: Untagged
@@ -878,6 +913,7 @@ MonoBehaviour:
   m_maxLife: 10
   exploded: 0
   desintegrated: 0
+  killer: {fileID: 0}
 --- !u!50 &811963726
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -906,6 +942,21 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .150000006, y: .150000006}
   m_Center: {x: 0, y: 0}
+--- !u!114 &811963728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 5d783bb26145c3a4e97766883bd68085,
+    type: 2}
+  m_PrefabInternal: {fileID: 107737178}
+  m_GameObject: {fileID: 811963719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc846bdfe537ad94a967ec8e17917dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExplosionReward: 1
+  m_DesintegrationReward: 1
+  m_DefaultReward: 1
 --- !u!1 &831063741
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,6 +972,7 @@ GameObject:
   - 50: {fileID: 831063748}
   - 61: {fileID: 831063749}
   - 58: {fileID: 831063743}
+  - 114: {fileID: 831063750}
   m_Layer: 10
   m_Name: Agent
   m_TagString: Untagged
@@ -1026,6 +1078,7 @@ MonoBehaviour:
   m_maxLife: 10
   exploded: 0
   desintegrated: 0
+  killer: {fileID: 0}
 --- !u!50 &831063748
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1054,6 +1107,21 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .150000006, y: .150000006}
   m_Center: {x: 0, y: 0}
+--- !u!114 &831063750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 5d783bb26145c3a4e97766883bd68085,
+    type: 2}
+  m_PrefabInternal: {fileID: 266559427}
+  m_GameObject: {fileID: 831063741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc846bdfe537ad94a967ec8e17917dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExplosionReward: 1
+  m_DesintegrationReward: 1
+  m_DefaultReward: 1
 --- !u!1001 &846846803
 Prefab:
   m_ObjectHideFlags: 0
@@ -1204,7 +1272,7 @@ Transform:
   m_PrefabInternal: {fileID: 1013513817}
   m_GameObject: {fileID: 1296795517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .393920004, y: .450190008, z: 0}
+  m_LocalPosition: {x: .393920004, y: .408419997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 151742970}
@@ -1224,6 +1292,7 @@ GameObject:
   - 50: {fileID: 1457236561}
   - 61: {fileID: 1457236562}
   - 58: {fileID: 1457236557}
+  - 114: {fileID: 1457236563}
   m_Layer: 10
   m_Name: Agent
   m_TagString: Untagged
@@ -1329,6 +1398,7 @@ MonoBehaviour:
   m_maxLife: 10
   exploded: 0
   desintegrated: 0
+  killer: {fileID: 0}
 --- !u!50 &1457236561
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1357,6 +1427,21 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .150000006, y: .150000006}
   m_Center: {x: 0, y: 0}
+--- !u!114 &1457236563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 5d783bb26145c3a4e97766883bd68085,
+    type: 2}
+  m_PrefabInternal: {fileID: 846846803}
+  m_GameObject: {fileID: 1457236554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc846bdfe537ad94a967ec8e17917dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExplosionReward: 1
+  m_DesintegrationReward: 1
+  m_DefaultReward: 1
 --- !u!1 &1497900679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1555,7 @@ GameObject:
   - 50: {fileID: 1767194910}
   - 61: {fileID: 1767194911}
   - 58: {fileID: 1767194905}
+  - 114: {fileID: 1767194912}
   m_Layer: 10
   m_Name: Agent
   m_TagString: Untagged
@@ -1575,6 +1661,7 @@ MonoBehaviour:
   m_maxLife: 10
   exploded: 0
   desintegrated: 0
+  killer: {fileID: 0}
 --- !u!50 &1767194910
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1603,6 +1690,21 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .150000006, y: .150000006}
   m_Center: {x: 0, y: 0}
+--- !u!114 &1767194912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 5d783bb26145c3a4e97766883bd68085,
+    type: 2}
+  m_PrefabInternal: {fileID: 502228983}
+  m_GameObject: {fileID: 1767194903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc846bdfe537ad94a967ec8e17917dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExplosionReward: 1
+  m_DesintegrationReward: 1
+  m_DefaultReward: 1
 --- !u!1 &1850001626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,6 +1720,7 @@ GameObject:
   - 50: {fileID: 1850001633}
   - 61: {fileID: 1850001634}
   - 58: {fileID: 1850001629}
+  - 114: {fileID: 1850001635}
   m_Layer: 10
   m_Name: Agent
   m_TagString: Untagged
@@ -1723,6 +1826,7 @@ MonoBehaviour:
   m_maxLife: 10
   exploded: 0
   desintegrated: 0
+  killer: {fileID: 0}
 --- !u!50 &1850001633
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1751,6 +1855,21 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .150000006, y: .150000006}
   m_Center: {x: 0, y: 0}
+--- !u!114 &1850001635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 5d783bb26145c3a4e97766883bd68085,
+    type: 2}
+  m_PrefabInternal: {fileID: 1667412136}
+  m_GameObject: {fileID: 1850001626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc846bdfe537ad94a967ec8e17917dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExplosionReward: 1
+  m_DesintegrationReward: 1
+  m_DefaultReward: 1
 --- !u!1 &2077003047
 GameObject:
   m_ObjectHideFlags: 0
