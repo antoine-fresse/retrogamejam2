@@ -72,7 +72,20 @@ public class RandomMBExplosion : MonoBehaviour {
             MBExplosion expl = Instantiate(m_mbxplosion, playerPos + new Vector3(0.0f, -4.0f, 0.0f), Quaternion.identity) as MBExplosion;
             expl.m_Direction = new Vector3(0.0f, 1.0f, 0.0f);
         }
+
+		StartCoroutine(slowMo());
         m_nextShot = Random.value * (m_maxDelay - m_minDelay) + m_minDelay;
         StartCoroutine(warning());
     }
+
+
+	IEnumerator slowMo() {
+
+		Time.timeScale = 0.5f;
+		yield return new WaitForSeconds(1.5f);
+		Time.timeScale = 1f;
+
+
+
+	}
 }

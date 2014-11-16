@@ -75,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -16.6779995, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -173,11 +173,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
   m_RocketPrefab: {fileID: 11400000, guid: ee48009417b634545ab4608925efe898, type: 2}
-  m_playerSpeed: 200
+  m_playerSpeed: 230
   m_direction: {x: 1, y: 0, z: 0}
   m_LaserPerSecond: 20
   m_RocketPerSecond: 1.20000005
-  m_CanShotAndWalk: 0
+  m_CanShotAndWalk: 1
   m_DeathExplosion: {fileID: 100000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:

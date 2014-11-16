@@ -25,15 +25,17 @@ public class MBExplosion : MonoBehaviour {
 
 	IEnumerator Explosion() {
 
+
+
 		for (int i = 0; i < count; i++) {
 
-            var exp = Instantiate(prefabExplosion, transform.position + (m_Direction * i) + m_CrossDirection, Quaternion.identity) as ExplosionCluster;
+            var exp = Instantiate(prefabExplosion, transform.position + (m_Direction * i) + m_CrossDirection*1.2f, Quaternion.identity) as ExplosionCluster;
 
 			exp.interval = 0.05f;
 			exp.count = 3;
 			exp.radius = 0.5f;
 
-            exp = Instantiate(prefabExplosion, transform.position + (m_Direction * i) - m_CrossDirection, Quaternion.identity) as ExplosionCluster;
+			exp = Instantiate(prefabExplosion, transform.position + (m_Direction * i) - m_CrossDirection * 1.2f, Quaternion.identity) as ExplosionCluster;
 
 			exp.interval = 0.05f;
 			exp.count = 3;
@@ -41,5 +43,8 @@ public class MBExplosion : MonoBehaviour {
 
 			yield return new WaitForSeconds(interval);
 		}
+
+
+		
 	}
 }

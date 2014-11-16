@@ -30,6 +30,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Time.timeScale = 1.0f;
         m_lastLaser = 0.0f;
         m_lastRocket = 0.0f;
 
@@ -66,8 +67,8 @@ public class Player : MonoBehaviour {
             if (((direction2D.x != 0) || (direction2D.y != 0)) && (m_CanShotAndWalk || (!m_IsShooting))) {
                 direction2D.Normalize();
                 m_direction = new Vector3(direction2D.x, direction2D.y, 0);
-                m_body.velocity = Vector2.zero;
-                m_body.AddForce(new Vector2(direction2D.x * m_playerSpeed, direction2D.y * m_playerSpeed));
+				m_body.velocity = new Vector2(direction2D.x * m_playerSpeed * Time.deltaTime, direction2D.y * m_playerSpeed * Time.deltaTime);
+                //m_body.AddForce();
 
                 m_animator.SetBool("walking", true);
             } else {

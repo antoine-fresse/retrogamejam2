@@ -21,7 +21,7 @@ public class Laser : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        transform.position = transform.position + m_direction * m_speed;
+        transform.position = transform.position + m_direction * m_speed * Time.deltaTime;
         m_LifeTime--;
         if (m_LifeTime <= 0) {
             Destroy(gameObject);
