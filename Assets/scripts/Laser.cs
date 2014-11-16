@@ -15,6 +15,8 @@ public class Laser : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Projectiles"), LayerMask.NameToLayer("Projectiles"), true);
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Projectiles"), LayerMask.NameToLayer("ProjectilesEnemy"), true);
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("ProjectilesEnemy"), LayerMask.NameToLayer("Agents"), true);
 	}
 	
 	// Update is called once per frame

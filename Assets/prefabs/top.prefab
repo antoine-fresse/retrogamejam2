@@ -232,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DeathExplosion: {fileID: 100000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}
   m_ToSpawn: {fileID: 100002, guid: 5d783bb26145c3a4e97766883bd68085, type: 2}
+  m_optimus: {fileID: 100004, guid: 10228d9b110c5f94bbdc7d4f53c997af, type: 2}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

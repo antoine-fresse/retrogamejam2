@@ -117,6 +117,10 @@ public class Optimus : MonoBehaviour {
                 }
             } 
         }   else {
+
+			
+
+			Destroy(gameObject);
             m_body.velocity = Vector2.zero;
             m_animator.SetBool("walking", false);
             m_animator.SetBool("firingLaser", false);

@@ -130,6 +130,7 @@ public class Player : MonoBehaviour {
         }
         Laser laser = (Laser)Instantiate(m_LaserPrefab, position, gameObject.transform.rotation);
         laser.m_direction = m_AimDirection;
+		
         laser.SetSpawner(this.gameObject);
     }
 

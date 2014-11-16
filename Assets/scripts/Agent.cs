@@ -55,6 +55,7 @@ public class Agent : MonoBehaviour {
             Destroy(GetComponent<CircleCollider2D>());
             Destroy(GetComponent<BoxCollider2D>());
 			transform.localEulerAngles = new Vector3(0.0f, 0.0f, Random.value * 360.0f);
+			renderer.sortingOrder = -1;
 
             if (m_scoreManager != null) {
                 GameObject killer = m_lifeManager.killer;

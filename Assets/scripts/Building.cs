@@ -12,18 +12,26 @@ public class Building : MonoBehaviour {
 
     private ScoreManager m_scoreManager;
 
+	private ScoreManager playerScore;
+
 	// Use this for initialization
 	void Start () {
         m_LifeManager = GetComponent<LifeManager>();
 		m_anim = GetComponent<Animator>();
         m_scoreManager = GetComponent<ScoreManager>();
+
+		playerScore = GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreManager>();
+
         //m_LifeManager.setDeathCallback(delegate() {
 		m_LifeManager.OnDeath += () => {
             if (m_DeathExplosion != null) {
 				Instantiate(m_DeathExplosion, transform.position, transform.rotation);
             }
             if (m_ToSpawn != null) {
-				Instantiate(m_ToSpawn, transform.position + new Vector3(Random.value - 0.5f, Random.value - 0.5f, Random.value - 0.5f), transform.rotation);
+
+				int cnt = playerScore.getScore() / 20 + 1;
+				for (int i = 0; i < cnt; i++)
+					Instantiate(m_ToSpawn, transform.position + new Vector3(Random.value - 0.5f, Random.value - 0.5f, Random.value - 0.5f), transform.rotation);
             }
             //Destroy(GetComponent<SpriteRenderer>());
 

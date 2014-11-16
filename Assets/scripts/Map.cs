@@ -24,7 +24,7 @@ struct Block {
 public class Map : MonoBehaviour {
 
 	public Transform building;
-
+	public Transform galvatron;
 	public int nbRows = 20;
 	public int nbCols = 20;
 
@@ -66,6 +66,9 @@ public class Map : MonoBehaviour {
 		sideStreets.Sort();
 
 		emptyBlock = new Block(mainStreets[0], sideStreets[0], mainStreets[1] - mainStreets[0], sideStreets[1] - sideStreets[0]);
+
+		galvatron.position = transform.position + new Vector3(mainStreets[0], sideStreets[0], 0);
+
 
 		for (int i = 0; i < nbRows; i++) {
 			for (int j = 0; j < nbCols; j++) {
