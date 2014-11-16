@@ -64,7 +64,9 @@ public class Building : MonoBehaviour {
 	}
 
 	void Update() {
-		m_anim.SetFloat("damage", 1.0f - (m_LifeManager.getLife()/ m_LifeManager.m_maxLife));
+        if (m_LifeManager != null) {
+            m_anim.SetFloat("damage", 1.0f - (m_LifeManager.getLife() / m_LifeManager.m_maxLife));
+        }
 	}
 
 	IEnumerator Remove() {
