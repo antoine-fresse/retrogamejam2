@@ -11,6 +11,7 @@ public class Laser : MonoBehaviour {
 
     public int m_LifeTime = 100;
 
+	public ExplosionCluster prefabExp;
 	// Use this for initialization
 	void Start () {
 	}
@@ -30,6 +31,14 @@ public class Laser : MonoBehaviour {
             if (manager != null) {
                 manager.DoDamage(m_damage);
             }
+
+			ExplosionCluster exp = Instantiate(prefabExp, transform.position + transform.up*0.25f, Quaternion.identity) as ExplosionCluster;
+			exp.count = 1;
+			exp.damage = 0.0f;
+			exp.minScale = 0.2f;
+			exp.maxScale = 0.3f;
+			exp.radius = 0.2f;
+
             Destroy(gameObject);
         }
     }

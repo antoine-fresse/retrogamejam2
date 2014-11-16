@@ -5,7 +5,7 @@ public class Rocket : MonoBehaviour {
 
 
 	public float accel = 2.0f;
-	private float speed = 0.0f;
+	private float speed = 2.0f;
 	public float fuse = 2.0f;
 
     private GameObject m_spawner;
@@ -50,14 +50,7 @@ public class Rocket : MonoBehaviour {
 		exp.delay = 0.0f;
 		exp.interval = 0.05f;
 		exp.radius = 0.7f;
-
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.7f);
-        foreach (Collider2D collider in colliders) {
-            LifeManager manager = collider.gameObject.GetComponent<LifeManager>();
-            if (manager != null) {
-                manager.DoDamage(m_damage);
-            }
-        }
+		exp.damage = m_damage;
 
 		Destroy(gameObject);
 	}

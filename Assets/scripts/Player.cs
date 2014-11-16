@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
 
     private Rigidbody2D m_body;
 
-    private LifeManager m_lifeManager;
+    public LifeManager m_lifeManager;
 
     public GameObject m_DeathExplosion;
 
@@ -42,10 +42,10 @@ public class Player : MonoBehaviour {
         m_RocketSpawner = transform.Find("RocketSpawner").gameObject;
         m_lifeManager = GetComponent<LifeManager>();
 
-        m_lifeManager.setDeathCallback(delegate(){
+        m_lifeManager.OnDeath += () => {
             Instantiate(m_DeathExplosion, transform.position, transform.rotation);
             Destroy(GetComponent<SpriteRenderer>());
-        });
+        };
 	}
 	
 	// Update is called once per frame

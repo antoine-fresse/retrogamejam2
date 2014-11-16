@@ -17,7 +17,7 @@ public class Agent : MonoBehaviour {
     public bool m_CanShotAndWalk = false;
     private bool m_IsShooting = false;
 
-    private GameObject m_Player;
+    private Player m_Player;
 
     public float m_DistanceToShoot = 5.0f;
 
@@ -36,15 +36,17 @@ public class Agent : MonoBehaviour {
 
         m_LaserSpawner = transform.Find("LaserSpawner").gameObject;
 
-        m_Player = GameObject.FindGameObjectsWithTag("Player")[0];
+		m_Player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Player>();
         m_lifeManager = GetComponent<LifeManager>();
 
-        m_lifeManager.setDeathCallback(delegate() {
+		m_lifeManager.OnDeath += () => {
             Instantiate(m_DeathExplosion, transform.position, transform.rotation);
-            Destroy(GetComponent<SpriteRenderer>());
+            //Destroy(GetComponent<SpriteRenderer>());
+			m_animator.SetBool("dead", true);
             Destroy(GetComponent<CircleCollider2D>());
             Destroy(GetComponent<BoxCollider2D>());
-        });
+			transform.localEulerAngles = new Vector3(0.0f, 0.0f, Random.value * 360.0f);
+        };
     }
 
     // Update is called once per frame
@@ -52,50 +54,59 @@ public class Agent : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (!m_lifeManager.IsDead() && !m_Player.GetComponent<LifeManager>().IsDead()) {
-            m_lastShoot = m_lastShoot + Time.deltaTime;
+        if (!m_lifeManager.IsDead()) {
+			if (!m_Player.m_lifeManager.IsDead()) {
+				m_lastShoot = m_lastShoot + Time.deltaTime;
 
-            Vector3 directionToPlayer = (m_Player.transform.position - transform.position);
-            float dist = directionToPlayer.magnitude;
-            if (dist > m_DistanceToShoot) {
-                Vector2 direction2D = new Vector2(directionToPlayer.x, directionToPlayer.y);
-                if (((direction2D.x != 0) || (direction2D.y != 0)) && (m_CanShotAndWalk || (!m_IsShooting))) {
-                    direction2D.Normalize();
-                    m_body.velocity = Vector2.zero;
-                    m_body.AddForce(new Vector2(direction2D.x * m_playerSpeed, direction2D.y * m_playerSpeed));
+				Vector3 directionToPlayer = (m_Player.transform.position - transform.position);
+				float dist = directionToPlayer.magnitude;
+				if (dist > m_DistanceToShoot) {
+					Vector2 direction2D = new Vector2(directionToPlayer.x, directionToPlayer.y);
+					if (((direction2D.x != 0) || (direction2D.y != 0)) && (m_CanShotAndWalk || (!m_IsShooting))) {
+						direction2D.Normalize();
+						m_body.velocity = Vector2.zero;
+						m_body.AddForce(new Vector2(direction2D.x * m_playerSpeed, direction2D.y * m_playerSpeed));
 
-                    m_animator.SetBool("walking", true);
-                } else {
-                    m_body.velocity = Vector2.zero;
-                    m_animator.SetBool("walking", false);
-                }
-            } else {
-                m_body.velocity = Vector2.zero;
-                m_animator.SetBool("walking", false);
-            }
+						m_animator.SetBool("walking", true);
+					} else {
+						m_body.velocity = Vector2.zero;
+						m_animator.SetBool("walking", false);
+					}
+				} else {
+					m_body.velocity = Vector2.zero;
+					m_animator.SetBool("walking", false);
+				}
 
-            float ax = directionToPlayer.x;
-            float ay = directionToPlayer.y;
-            if ((ax != 0) || (ay != 0)) {
-                Vector2 dir2 = new Vector2(ax, ay);
-                dir2.Normalize();
-                m_AimDirection = new Vector3(dir2.x, dir2.y, 0.0f);
-            }
-            float angle = Vector3.Angle(m_AimDirection, new Vector3(0.0f, 1.0f, 0.0f));
-            if (m_AimDirection.x > 0.0f) {
-                angle = 360.0f - angle;
-            }
-            transform.localEulerAngles = new Vector3(0.0f, 0.0f, angle);
-            if (dist <= m_DistanceToShoot) {
-                m_animator.SetBool("firingLaser", true);
-                m_IsShooting = true;
-                if (canShoot()) {
-                    shot();
-                }
-            } else {
-                m_IsShooting = false;
-                m_animator.SetBool("firingLaser", false);
-            }
+
+				// Rotation
+
+				float ax = directionToPlayer.x;
+				float ay = directionToPlayer.y;
+				if ((ax != 0) || (ay != 0)) {
+					Vector2 dir2 = new Vector2(ax, ay);
+					dir2.Normalize();
+					m_AimDirection = new Vector3(dir2.x, dir2.y, 0.0f);
+				}
+				float angle = Vector3.Angle(m_AimDirection, new Vector3(0.0f, 1.0f, 0.0f));
+				if (m_AimDirection.x > 0.0f) {
+					angle = 360.0f - angle;
+				}
+				transform.localEulerAngles = new Vector3(0.0f, 0.0f, angle);
+
+
+
+
+				if (dist <= m_DistanceToShoot) {
+					m_animator.SetBool("firingLaser", true);
+					m_IsShooting = true;
+					if (canShoot()) {
+						shot();
+					}
+				} else {
+					m_IsShooting = false;
+					m_animator.SetBool("firingLaser", false);
+				}
+			}
         } else {
             m_body.velocity = Vector2.zero;
             m_animator.SetBool("walking", false);

@@ -11,16 +11,17 @@ public class Building : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         m_LifeManager = GetComponent<LifeManager>();
-        m_LifeManager.setDeathCallback(delegate() {
+        //m_LifeManager.setDeathCallback(delegate() {
+		m_LifeManager.OnDeath += () => {
             if (m_DeathExplosion != null) {
-                Instantiate(m_DeathExplosion, transform.position, transform.rotation);
+				Instantiate(m_DeathExplosion, transform.position, transform.rotation);
             }
             if (m_ToSpawn != null) {
-                Instantiate(m_ToSpawn, transform.position, transform.rotation);
+				Instantiate(m_ToSpawn, transform.position + new Vector3(Random.value - 0.5f, Random.value - 0.5f, Random.value - 0.5f), transform.rotation);
             }
             Destroy(GetComponent<SpriteRenderer>());
             Destroy(GetComponent<BoxCollider2D>());
-        });
+        };
 	}
 	
 	// Update is called once per frame

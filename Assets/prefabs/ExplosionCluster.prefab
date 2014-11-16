@@ -42,7 +42,8 @@ MonoBehaviour:
   delay: 0
   interval: .0500000007
   radius: 1.5
-  count: 10
+  count: 5
+  damage: 0
   prefab: {fileID: 400000, guid: 6470d267d96703143a9c860f2d81e1d4, type: 2}
 --- !u!1001 &100100000
 Prefab:

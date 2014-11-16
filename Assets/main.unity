@@ -253,8 +253,9 @@ MonoBehaviour:
   m_playerSpeed: 150
   m_direction: {x: 1, y: 0, z: 0}
   m_LaserPerSecond: 100
-  m_RocketPerSecond: 1
+  m_RocketPerSecond: 2
   m_CanShotAndWalk: 0
+  m_lifeManager: {fileID: 0}
   m_DeathExplosion: {fileID: 100000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}
 --- !u!61 &790591044
 BoxCollider2D:
@@ -338,7 +339,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4ea47c968e3197747baefe3ac1f44b79, type: 2}
       propertyPath: m_RocketPerSecond
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ea47c968e3197747baefe3ac1f44b79, type: 2}

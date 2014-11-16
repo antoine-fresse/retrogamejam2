@@ -88,6 +88,7 @@ MonoBehaviour:
   m_damage: 1
   m_direction: {x: 0, y: 0, z: 0}
   m_LifeTime: 150
+  prefabExp: {fileID: 11400000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
