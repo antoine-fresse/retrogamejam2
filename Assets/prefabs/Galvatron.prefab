@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
   m_RocketPrefab: {fileID: 11400000, guid: ee48009417b634545ab4608925efe898, type: 2}
-  m_playerSpeed: 150
+  m_playerSpeed: 200
   m_direction: {x: 1, y: 0, z: 0}
   m_LaserPerSecond: 20
   m_RocketPerSecond: 1.20000005
