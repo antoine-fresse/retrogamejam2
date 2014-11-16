@@ -16,4 +16,8 @@ public class UIGameOver : MonoBehaviour {
 	public void Restart() {
 		Application.LoadLevel(1);
 	}
+
+	public void Quit() {
+		Application.Quit();
+	}
 }

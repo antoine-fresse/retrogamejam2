@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		textHP.text = "HP " + life.getLife();
+		textHP.text = "HP " + (int)life.getLife();
 		textScore.text = "Score " + score.getScore();
 	}
 }

@@ -132,6 +132,7 @@ public class Agent : MonoBehaviour {
 				}
 			}
         } else {
+			StartCoroutine(Remove());
             m_body.velocity = Vector2.zero;
             m_animator.SetBool("walking", false);
             m_animator.SetBool("firingLaser", false);
@@ -154,4 +155,11 @@ public class Agent : MonoBehaviour {
         float dist = directionToPlayer.magnitude;
         return (m_lastShoot > (1.0f / m_ShotPerSecond)) && (dist <= m_DistanceToShoot);
     }
+
+	IEnumerator Remove() {
+		yield return new WaitForSeconds(10f);
+
+		Destroy(gameObject);
+
+	}
 }
