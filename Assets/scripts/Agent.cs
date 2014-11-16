@@ -42,7 +42,6 @@ public class Agent : MonoBehaviour {
 		m_lifeManager.OnDeath += () => {
             Instantiate(m_DeathExplosion, transform.position, transform.rotation);
             //Destroy(GetComponent<SpriteRenderer>());
-            print("dead");
             if (m_lifeManager.exploded) {
                 m_animator.SetBool("exploded", true);
             } else if (m_lifeManager.desintegrated) {
