@@ -16,6 +16,7 @@ public class Building : MonoBehaviour {
 	void Start () {
         m_LifeManager = GetComponent<LifeManager>();
 		m_anim = GetComponent<Animator>();
+        m_scoreManager = GetComponent<ScoreManager>();
         //m_LifeManager.setDeathCallback(delegate() {
 		m_LifeManager.OnDeath += () => {
             if (m_DeathExplosion != null) {
