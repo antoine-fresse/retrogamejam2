@@ -9,6 +9,9 @@ public class Building : MonoBehaviour {
     public GameObject m_ToSpawn;
 
 	private Animator m_anim;
+
+    private ScoreManager m_scoreManager;
+
 	// Use this for initialization
 	void Start () {
         m_LifeManager = GetComponent<LifeManager>();
@@ -33,6 +36,20 @@ public class Building : MonoBehaviour {
 			gameObject.renderer.enabled = false;
 
             Destroy(GetComponent<BoxCollider2D>());
+            
+            if (m_scoreManager != null) {
+                GameObject killer = m_LifeManager.killer;
+                if (killer != null) {
+                    ScoreManager sm = killer.GetComponent<ScoreManager>();
+                    if (m_LifeManager.exploded) {
+                        sm.addScore(m_scoreManager.m_ExplosionReward);
+                    } else if (m_LifeManager.desintegrated) {
+                        sm.addScore(m_scoreManager.m_DesintegrationReward);
+                    } else {
+                        sm.addScore(m_scoreManager.m_DefaultReward);
+                    }
+                }
+            }
 			StartCoroutine(Remove());
         };
 	}
