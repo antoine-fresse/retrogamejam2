@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d2bc2ef2c46da47928746bc15b4456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
+  m_LaserPrefab: {fileID: 11400000, guid: c246816644d755b4789aabca8adcc8e1, type: 2}
   m_playerSpeed: 75
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998
