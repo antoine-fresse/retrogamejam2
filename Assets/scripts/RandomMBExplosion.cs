@@ -18,6 +18,8 @@ public class RandomMBExplosion : MonoBehaviour {
 
     private GameObject m_player;
 
+    private int m_nextSide = 0;
+
 	// Use this for initialization
 	void Start () {
         m_player = GameObject.FindGameObjectWithTag("Player");
@@ -33,23 +35,23 @@ public class RandomMBExplosion : MonoBehaviour {
     IEnumerator warning() {
         yield return new WaitForSeconds(m_nextShot);
 
-        int side = Mathf.RoundToInt(Random.value * 3.0f);
-        if (side == 0) { // droite
+        int m_nextSide = Mathf.RoundToInt(Random.value * 3.0f);
+        if (m_nextSide == 0) { // droite
             Instantiate(m_rightTooltip, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-            StartCoroutine(shoot(side));
-        } else if (side == 1) { // gauche
+            StartCoroutine(shoot());
+        } else if (m_nextSide == 1) { // gauche
             Instantiate(m_leftTooltip, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-            StartCoroutine(shoot(side));
-        } else if (side == 2) { // haut
+            StartCoroutine(shoot());
+        } else if (m_nextSide == 2) { // haut
             Instantiate(m_topTooltip, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-            StartCoroutine(shoot(side));
-        } else if (side == 3) { // bas
+            StartCoroutine(shoot());
+        } else if (m_nextSide == 3) { // bas
             Instantiate(m_bottomTooltip, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-            StartCoroutine(shoot(side));
+            StartCoroutine(shoot());
         }
     }
 
-    IEnumerator shoot(int side) {
+    IEnumerator shoot() {
         yield return new WaitForSeconds(m_warningDelay);
 
         Vector3 playerPos = Vector3.zero;
@@ -57,18 +59,20 @@ public class RandomMBExplosion : MonoBehaviour {
             playerPos = m_player.transform.position;
         }
 
-        if (side == 0) { // droite
+        if (m_nextSide == 0) { // droite
             MBExplosion expl = Instantiate(m_mbxplosion, playerPos + new Vector3(4.0f, 0.0f, 0.0f), Quaternion.identity) as MBExplosion;
             expl.m_Direction = new Vector3(-1.0f, 0.0f, 0.0f);
-        } else if (side == 1) { // gauche
+        } else if (m_nextSide == 1) { // gauche
             MBExplosion expl = Instantiate(m_mbxplosion, playerPos + new Vector3(-4.0f, 0.0f, 0.0f), Quaternion.identity) as MBExplosion;
             expl.m_Direction = new Vector3(1.0f, 0.0f, 0.0f);
-        } else if (side == 2) { // haut
+        } else if (m_nextSide == 2) { // haut
             MBExplosion expl = Instantiate(m_mbxplosion, playerPos + new Vector3(0.0f, 4.0f, 0.0f), Quaternion.identity) as MBExplosion;
             expl.m_Direction = new Vector3(0.0f, -1.0f, 0.0f);
-        } else if (side == 3) { // bas
+        } else if (m_nextSide == 3) { // bas
             MBExplosion expl = Instantiate(m_mbxplosion, playerPos + new Vector3(0.0f, -4.0f, 0.0f), Quaternion.identity) as MBExplosion;
             expl.m_Direction = new Vector3(0.0f, 1.0f, 0.0f);
         }
+        m_nextShot = Random.value * (m_maxDelay - m_minDelay) + m_minDelay;
+        StartCoroutine(warning());
     }
 }

@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
 
     private Rigidbody2D m_body;
 
-    public LifeManager m_lifeManager;
+    private LifeManager m_lifeManager;
 
     public GameObject m_DeathExplosion;
 
@@ -151,5 +151,9 @@ public class Player : MonoBehaviour {
                 //manager.DoDamage(m_damage);
             }
         }
+    }
+
+    public LifeManager getLifeManager() {
+        return m_lifeManager;
     }
 }

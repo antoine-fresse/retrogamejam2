@@ -334,7 +334,6 @@ MonoBehaviour:
   m_LaserPerSecond: 20
   m_RocketPerSecond: 1.20000005
   m_CanShotAndWalk: 0
-  m_lifeManager: {fileID: 0}
   m_DeathExplosion: {fileID: 100000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}
 --- !u!95 &151742972
 Animator:
@@ -387,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb85ff7d04f40942a8406c4afe057b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxLife: 20
+  m_maxLife: 200
   exploded: 0
   desintegrated: 0
   killer: {fileID: 0}
@@ -401,8 +400,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: .901453316, y: .599390507}
+  m_Center: {x: -.0123183429, y: .0483493805}
 --- !u!50 &151742976
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -640,7 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d2bc2ef2c46da47928746bc15b4456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
+  m_LaserPrefab: {fileID: 11400000, guid: c246816644d755b4789aabca8adcc8e1, type: 2}
   m_playerSpeed: 75
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998
@@ -758,6 +757,54 @@ Prefab:
   m_RootGameObject: {fileID: 562900248}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1001 &723106009
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .593309999
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.71399999
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+      propertyPath: m_Name
+      value: ExplosionCluster
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+  m_RootGameObject: {fileID: 1412026940}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &760898044
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d2bc2ef2c46da47928746bc15b4456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
+  m_LaserPrefab: {fileID: 11400000, guid: c246816644d755b4789aabca8adcc8e1, type: 2}
   m_playerSpeed: 75
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998
@@ -1012,7 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d2bc2ef2c46da47928746bc15b4456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
+  m_LaserPrefab: {fileID: 11400000, guid: c246816644d755b4789aabca8adcc8e1, type: 2}
   m_playerSpeed: 75
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998
@@ -1297,6 +1344,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 151742970}
   m_RootOrder: 1
+--- !u!1 &1412026940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+  m_PrefabInternal: {fileID: 723106009}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1412026942}
+  - 114: {fileID: 1412026941}
+  m_Layer: 0
+  m_Name: ExplosionCluster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1412026941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: d177b2009402afe489c522634e5ef69c,
+    type: 2}
+  m_PrefabInternal: {fileID: 723106009}
+  m_GameObject: {fileID: 1412026940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce21cdbd0030d74b87e7a97820a2f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  interval: .0500000007
+  radius: 1.5
+  count: 5
+  damage: 20
+  minScale: 1
+  maxScale: 1
+  prefab: {fileID: 400000, guid: 6470d267d96703143a9c860f2d81e1d4, type: 2}
+--- !u!4 &1412026942
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+  m_PrefabInternal: {fileID: 723106009}
+  m_GameObject: {fileID: 1412026940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .593309999, y: -1.71399999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &1457236554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,7 +1440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d2bc2ef2c46da47928746bc15b4456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
+  m_LaserPrefab: {fileID: 11400000, guid: c246816644d755b4789aabca8adcc8e1, type: 2}
   m_playerSpeed: 75
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998
@@ -1595,7 +1690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d2bc2ef2c46da47928746bc15b4456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
+  m_LaserPrefab: {fileID: 11400000, guid: c246816644d755b4789aabca8adcc8e1, type: 2}
   m_playerSpeed: 75
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998
@@ -1773,7 +1868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d2bc2ef2c46da47928746bc15b4456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
+  m_LaserPrefab: {fileID: 11400000, guid: c246816644d755b4789aabca8adcc8e1, type: 2}
   m_playerSpeed: 75
   m_direction: {x: 1, y: 0, z: 0}
   m_ShotPerSecond: 1.39999998

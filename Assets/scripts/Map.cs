@@ -38,6 +38,7 @@ public class Map : MonoBehaviour {
 	Block emptyBlock;
 	// Use this for initialization
 	void Start () {
+        Screen.SetResolution(640, 475, true);
 		transform.position = new Vector3(-nbRows / 2.0f, -nbCols/2.0f,0.0f);
 		mainStreets = new List<int>();
 		sideStreets = new List<int>();

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: MBExplosion
+  m_Name: MBExplosionCluster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .593309999, y: -1.71399999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -36,13 +36,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd8c918fd3a7155478bd3e30a71ccd11, type: 3}
+  m_Script: {fileID: 11500000, guid: fce21cdbd0030d74b87e7a97820a2f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 10
-  interval: .100000001
-  m_Direction: {x: 1, y: 0, z: 0}
-  prefabExplosion: {fileID: 11400000, guid: d177b2009402afe489c522634e5ef69c, type: 2}
+  delay: 0
+  interval: .0500000007
+  radius: 1.5
+  count: 5
+  damage: 20
+  minScale: 1
+  maxScale: 1
+  prefab: {fileID: 400000, guid: 6470d267d96703143a9c860f2d81e1d4, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -78,7 +78,7 @@ public class Agent : MonoBehaviour {
 
     void FixedUpdate() {
         if (!m_lifeManager.IsDead()) {
-			if (!m_Player.m_lifeManager.IsDead()) {
+            if (!m_Player.getLifeManager().IsDead()) {
 				m_lastShoot = m_lastShoot + Time.deltaTime;
 
 				Vector3 directionToPlayer = (m_Player.transform.position - transform.position);
