@@ -102,14 +102,14 @@ public class Optimus : MonoBehaviour {
                 transform.localEulerAngles = new Vector3(0.0f, 0.0f, angle);
 
                 if (dist <= m_DistanceToShoot) {
-                    if (canShootLaser()) {
-                        m_animator.SetBool("firingLaser", true);
-                        m_IsShooting = true;
-                        shootLaser();
-                    } else if (canShootRocket()) {
+                    if (canShootRocket()) {
                         m_animator.SetBool("firingLaser", false);
                         m_animator.SetTrigger("launchRocket");
                         StartCoroutine(shootRocket());
+                    } else if (canShootLaser()) {
+                        m_animator.SetBool("firingLaser", true);
+                        m_IsShooting = true;
+                        shootLaser();
                     }
                 } else {
                     m_IsShooting = false;
@@ -154,6 +154,16 @@ public class Optimus : MonoBehaviour {
     }
 
     bool canShootRocket() {
+        Vector2 origin = new Vector2(m_RocketSpawner.transform.position.x, m_RocketSpawner.transform.position.y);
+        //Vector2 dir = new Vector2(m_AimDirection.x, m_AimDirection.y);
+        Vector2 target = new Vector2(m_Player.gameObject.transform.position.x, m_Player.gameObject.transform.position.y);
+        Vector2 dir = target - origin;
+        float distance = (origin - target).magnitude;
+        RaycastHit2D hit = Physics2D.Raycast(origin, dir, distance);
+        if (hit.collider.gameObject != m_Player.gameObject) {
+            return false;
+        }
+
         return m_lastRocket > (1.0f / m_RocketPerSecond);
     }
 }
