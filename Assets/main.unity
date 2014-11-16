@@ -445,7 +445,7 @@ Transform:
   - {fileID: 1962092591}
   - {fileID: 1693150588}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &790591039
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,49 +929,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shake: 0
---- !u!1 &1845474641
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1845474643}
-  - 114: {fileID: 1845474642}
-  m_Layer: 0
-  m_Name: MBExplosion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1845474642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1845474641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd8c918fd3a7155478bd3e30a71ccd11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  count: 10
-  interval: .150000006
-  m_Direction: {x: 0, y: 0, z: 0}
-  prefabExplosion: {fileID: 11400000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}
---- !u!4 &1845474643
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1845474641}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .130779997, y: -3.25559998, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
 --- !u!1 &1962092590
 GameObject:
   m_ObjectHideFlags: 0
