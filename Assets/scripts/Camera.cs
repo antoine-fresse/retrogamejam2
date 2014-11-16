@@ -19,11 +19,7 @@ public class Camera : MonoBehaviour {
 	}
 
     void Update() {
-        Vector3 pos = m_Player.transform.position;
-        m_position.Set(pos.x, pos.y, m_position.z);
-        //transform.position = m_position;
-		float t = Time.time;
-		transform.position = m_position + new Vector3(Mathf.Cos(20 * t) * shake * 0.1f, Mathf.Cos(50 * t + 3) * shake * 0.1f, 0.0f);
+        
     }
 	
 	// Update is called once per frame
@@ -31,6 +27,10 @@ public class Camera : MonoBehaviour {
 		
 		shake = Mathf.Max(shake - shake*0.5f, 0.0f);
 
-		
+		Vector3 pos = m_Player.transform.position;
+		m_position.Set(pos.x, pos.y, m_position.z);
+		//transform.position = m_position;
+		float t = Time.time;
+		transform.position = m_position + new Vector3(Mathf.Cos(20 * t) * shake * 0.1f, Mathf.Cos(50 * t + 3) * shake * 0.1f, 0.0f);
 	}
 }
