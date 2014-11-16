@@ -127,6 +127,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 112739093}
   - 114: {fileID: 112739092}
+  - 114: {fileID: 112739094}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -162,6 +163,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!114 &112739094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 112739091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1005aa42b494f4fa27c0e7b71e4815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_minDelay: 5
+  m_maxDelay: 15
+  m_warningDelay: 1
+  m_mbxplosion: {fileID: 11400000, guid: 5a3d82f16733d934d993ba8ecb66c617, type: 2}
+  m_rightTooltip: {fileID: 11400006, guid: c9bebb3690ffccb4a81e0c3cf8d55edb, type: 2}
+  m_leftTooltip: {fileID: 11400006, guid: d547149b0e1d57c408b75733abbb3959, type: 2}
+  m_topTooltip: {fileID: 11400006, guid: c550cac9b0b2a4f4ca272b9ce4b8dbcd, type: 2}
+  m_bottomTooltip: {fileID: 11400006, guid: ef83f8abc97ba3d4e892678e3ee25c36, type: 2}
 --- !u!1 &116669810
 GameObject:
   m_ObjectHideFlags: 0

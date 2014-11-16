@@ -3,11 +3,11 @@ using System.Collections;
 
 public class ExplosionTooltip : MonoBehaviour {
 
-    public int m_duration;
+    public float m_duration = 2.5f;
 
 	// Use this for initialization
 	void Start () {
-	
+        StartCoroutine(disapear());
 	}
 	
 	// Update is called once per frame
