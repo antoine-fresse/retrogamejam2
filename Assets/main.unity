@@ -249,10 +249,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LaserPrefab: {fileID: 11400000, guid: 6b8e63684debe594485bd77c45e9bb7a, type: 2}
+  m_RocketPrefab: {fileID: 11400000, guid: ee48009417b634545ab4608925efe898, type: 2}
   m_playerSpeed: 150
   m_direction: {x: 1, y: 0, z: 0}
-  m_ShotPerSecond: 50
-  m_CanShotAndWalk: 1
+  m_LaserPerSecond: 100
+  m_RocketPerSecond: 1
+  m_CanShotAndWalk: 0
+  m_DeathExplosion: {fileID: 100000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}
 --- !u!61 &790591044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -277,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb85ff7d04f40942a8406c4afe057b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxLife: 100
+  m_maxLife: 20
 --- !u!50 &790591046
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -332,6 +335,10 @@ Prefab:
     - target: {fileID: 400000, guid: 4ea47c968e3197747baefe3ac1f44b79, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4ea47c968e3197747baefe3ac1f44b79, type: 2}
+      propertyPath: m_RocketPerSecond
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ea47c968e3197747baefe3ac1f44b79, type: 2}
@@ -506,7 +513,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shake: 0
-  playerTransform: {fileID: 0}
 --- !u!1 &1845474641
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1845474642
 MonoBehaviour:
   m_ObjectHideFlags: 0
