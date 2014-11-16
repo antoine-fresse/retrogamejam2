@@ -33,6 +33,7 @@ public class ExplosionCluster : MonoBehaviour {
             }
 			float scale = Random.Range(minScale, maxScale);
 			t.localScale = new Vector3(scale, scale, scale);
+			t.audio.volume = Mathf.Min(1.0f, scale);
 
 
 			Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius * scale);

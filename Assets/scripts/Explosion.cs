@@ -5,10 +5,14 @@ public class Explosion : MonoBehaviour {
 
     private GameObject m_spawner;
 
+	public AudioClip[] clips;
+
 	// Use this for initialization
 	void Start () {
 		Camera.instance.shake += transform.localScale.x * 3.0f;
 		StartCoroutine(Expire());
+		audio.clip = clips[Random.Range(0, clips.Length - 1)];
+		audio.Play();
 	}
 
 	IEnumerator Expire() {
