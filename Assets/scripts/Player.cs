@@ -89,10 +89,10 @@ public class Player : MonoBehaviour {
                     shootLaser();
                 }
             } else if (Input.GetAxis("Fire1") <= -0.5f) {
-                m_animator.SetTrigger("launchRocket");
                 m_IsShooting = true;
                 if (canShootRocket()) {
-                    shootRocket();
+					m_animator.SetTrigger("launchRocket");
+					StartCoroutine(shootRocket());
                 }
             } else {
                 m_IsShooting = false;
@@ -119,12 +119,13 @@ public class Player : MonoBehaviour {
     bool canShootLaser() {
         return m_lastLaser > (1.0f / m_LaserPerSecond);
     }
-    void shootRocket() {
-        m_lastRocket = 0.0f;
-        Vector3 position = transform.position;
-        if (m_RocketSpawner) {
-            position = m_RocketSpawner.transform.position;
-        }
+    IEnumerator shootRocket() {
+		m_lastRocket = 0.0f;
+		yield return new WaitForSeconds(0.57f);
+		Vector3 position = transform.position;
+		if (m_RocketSpawner) {
+			position = m_RocketSpawner.transform.position;
+		}
         Rocket rocket = (Rocket)Instantiate(m_RocketPrefab, position, gameObject.transform.rotation);
         rocket.m_direction = m_AimDirection;
         rocket.SetSpawner(this.gameObject);
