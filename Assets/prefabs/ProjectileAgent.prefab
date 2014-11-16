@@ -15,7 +15,7 @@ GameObject:
   - 95: {fileID: 9500000}
   - 82: {fileID: 8200000}
   m_Layer: 0
-  m_Name: Laser
+  m_Name: ProjectileAgent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: .25
-  m_damage: 2
+  m_damage: 1
   m_direction: {x: 0, y: 0, z: 0}
   m_LifeTime: 150
   prefabExp: {fileID: 11400000, guid: bb5777f3a5658f549b4edf6b7f239152, type: 2}

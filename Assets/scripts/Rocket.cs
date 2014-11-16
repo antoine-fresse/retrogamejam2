@@ -46,10 +46,10 @@ public class Rocket : MonoBehaviour {
 	void Explode() {
 		ExplosionCluster exp = Instantiate(prefabExplosion, transform.position, Quaternion.identity) as ExplosionCluster;
 
-		exp.count = 5;
+		exp.count = 6;
 		exp.delay = 0.0f;
 		exp.interval = 0.05f;
-		exp.radius = 0.7f;
+		exp.radius = 1.0f;
 		exp.damage = m_damage;
         exp.SetSpawner(m_spawner);
 

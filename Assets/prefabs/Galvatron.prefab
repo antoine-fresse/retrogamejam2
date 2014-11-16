@@ -114,8 +114,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: .901453316, y: .599390507}
+  m_Center: {x: -.0123183429, y: .0483493805}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb85ff7d04f40942a8406c4afe057b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxLife: 20
+  m_maxLife: 200
   exploded: 0
   desintegrated: 0
   killer: {fileID: 0}

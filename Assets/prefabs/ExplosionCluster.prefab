@@ -43,7 +43,7 @@ MonoBehaviour:
   interval: .0500000007
   radius: 1.5
   count: 5
-  damage: 0
+  damage: 1
   minScale: 1
   maxScale: 1
   prefab: {fileID: 400000, guid: 6470d267d96703143a9c860f2d81e1d4, type: 2}
