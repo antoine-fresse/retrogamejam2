@@ -102,6 +102,10 @@ public class Player : MonoBehaviour {
             m_body.velocity = Vector2.zero;
             m_animator.SetBool("walking", false);
             m_animator.SetBool("firingLaser", false);
+
+            if (Input.GetAxis("Restart") != 0.0f) {
+                Application.LoadLevel(Application.loadedLevel);
+            }
         }
     }
 

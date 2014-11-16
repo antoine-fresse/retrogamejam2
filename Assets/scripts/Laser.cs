@@ -29,7 +29,7 @@ public class Laser : MonoBehaviour {
         if ((hit.gameObject != m_spawner) && (!hit.gameObject.name.Equals("Laser(Clone)"))) {
             LifeManager manager = hit.gameObject.GetComponent<LifeManager>();
             if (manager != null) {
-                manager.DoDamage(m_damage);
+                manager.DoDamage(m_damage, gameObject);
             }
 
 			ExplosionCluster exp = Instantiate(prefabExp, transform.position + transform.up*0.25f, Quaternion.identity) as ExplosionCluster;
