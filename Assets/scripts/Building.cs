@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Building : MonoBehaviour {
 
+	public static Vector3 lastBuildingPosition;
     private LifeManager m_LifeManager;
 
     public GameObject m_DeathExplosion;
@@ -34,7 +35,7 @@ public class Building : MonoBehaviour {
 					Instantiate(m_ToSpawn, transform.position + new Vector3(Random.value - 0.5f, Random.value - 0.5f, Random.value - 0.5f), transform.rotation);
             }
             //Destroy(GetComponent<SpriteRenderer>());
-
+			lastBuildingPosition = transform.position;
 			foreach (Transform t in transform) {
 				float scale = Random.value*0.5f + 0.5f;
 				t.localScale = new Vector3(scale, scale, scale);
